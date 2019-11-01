@@ -261,7 +261,7 @@ public protocol DateRepresentable {
 	///   - style: style to use to format relative date.
 	///	  - locale: force locale print, `nil` to use the date own region's locale
 	/// - Returns: string representation of the date.
-	func toRelative(since: DateInRegion?, style: RelativeFormatter.Style?, locale: LocaleConvertible?) -> String
+//	func toRelative(since: DateInRegion?, style: RelativeFormatter.Style?, locale: LocaleConvertible?) -> String
 
 	/// Return ISO8601 representation of the date
 	///
@@ -524,9 +524,9 @@ public extension DateRepresentable {
 		return DateToStringStyles.custom(format).toString(fixedDate)
 	}
 
-	func toRelative(since: DateInRegion? = nil, style: RelativeFormatter.Style? = nil, locale: LocaleConvertible? = nil) -> String {
-		return RelativeFormatter.format(date: self, to: since, style: style, locale: locale?.toLocale())
-	}
+//	func toRelative(since: DateInRegion? = nil, style: RelativeFormatter.Style? = nil, locale: LocaleConvertible? = nil) -> String {
+//		return RelativeFormatter.format(date: self, to: since, style: style, locale: locale?.toLocale())
+//	}
 
 	func toISO(_ options: ISOFormatter.Options? = nil) -> String {
 		return DateToStringStyles.iso( (options ?? ISOFormatter.Options([.withInternetDateTime])) ).toString(self)

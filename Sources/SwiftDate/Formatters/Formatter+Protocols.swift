@@ -48,7 +48,7 @@ public enum DateToStringStyles {
 	case dateTime(_: DateFormatter.Style)
 	case custom(_: String)
 	case standard
-	case relative(style: RelativeFormatter.Style?)
+//	case relative(style: RelativeFormatter.Style?)
 
 	public func toString(_ date: DateRepresentable) -> String {
 		switch self {
@@ -76,8 +76,8 @@ public enum DateToStringStyles {
 				$0.dateStyle = style
 				$0.timeStyle = style
 			}).string(from: date.date)
-		case .relative(let style):
-			return RelativeFormatter.format(date, options: style)
+//		case .relative(let style):
+//			return RelativeFormatter.format(date, options: style)
 		}
 	}
 
